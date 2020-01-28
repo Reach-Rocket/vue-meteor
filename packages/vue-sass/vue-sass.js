@@ -111,6 +111,7 @@ global.vue.lang.scss = Meteor.wrapAsync(function ({
 		sourceMapContents: true,
 	}, function (error, result) {
 		if (error) {
+      console.error(`Error while processing ${inputFile.getPathInPackage()}.css`, error.formatted)
 			cb(error, null)
 		} else {
 			cb(null, {
